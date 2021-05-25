@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact Form In Bootstrap Modal Popup - reusable form</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="form.css" >
+        <script src="form.js"></script>
+    </head>
+    <body >
+        <div class="container">
+            <div class="container-box rotated">
+                <button type="button" class="btn btn-info btn-lg turned-button" data-toggle="modal" data-target="#myModal">Contact Us</button>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">
+                                Contact Us
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form" method="post" id="reused_form" >
+                                <p> Send your message in the form below and we will get back to you as early as possible. </p>
+                                <div class="form-group">
+                                    <label for="name"> Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" required maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"> Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" required maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Message:</label>
+                                    <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Post It! &rarr;</button>
+                            </form>
+                            <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Sent your message successfully!</h3> </div>
+                            <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!---form-->
+
+
+<form id="contactForm" method="post" action="php/order_post.php" class="frm_order" name="form5" enctype="multipart/form-data">
+    <input name="hdn_site_Acc_id" id="hdn_site_Acc_id" type="hidden" value="vumatelae01">
+    <input name="hdn_lead_source" id="hdn_lead_source" type="hidden" value="Signup">
+    <h4>Details</h4>
+        <div class="row">
+            <input name="promocode" id="promocode" type="hidden" value="VumaPromo1">
+            <!-- Name -->
+            
+            <div class="col-4">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" placeholder="Name" name="name" id="name" required="" data-error="Please enter your name" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-1">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <!-- Surname -->
+            <div class="col-4">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" placeholder="Surname" name="surname" id="surname" required="" data-error="Please enter your surname" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-2">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <!-- Number -->
+            <div class="col-4">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" placeholder="Phone Number" name="number" id="number" required="" data-error="Please enter your phone number" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-3">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <!-- Email -->
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group" data-children-count="1">
+
+                    <input type="email" class="form-control" name="email" placeholder="Email" id="email" required="" data-error="Please enter your email" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-5">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <!-- ID -->
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="id_number" placeholder="ID Number / Passport Number" id="id_number" required="" data-error="Please enter your ID number / Passport number" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-4">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            
+            
+
+            <div class="col-12">
+                <br>
+                <div class="form-check form-check-inline" data-children-count="1">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <label class="form-check-label" for="inlineRadio1">Same as above</label>
+                </div>
+                <div class="form-check form-check-inline" data-children-count="1">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <label class="form-check-label" for="inlineRadio2">Another Address</label>
+                </div>
+            </div>
+
+            <!-- Installation Address -->
+            <h4 style="text-align: center;">Installation Address</h4>
+            <div class="col-12">
+                <br>
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="installation_address" placeholder=" Street address" id="installation_address" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-7">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <br>
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="installation_address" placeholder="Complex Name(if applicable)" id="installation_address" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-7">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <br>
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="installation_address" placeholder=" Unit number (if applicable)" id="installation_address" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-7">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <!-- Billing Address -->
+            <h4 style="text-align: center;">Billing Address</h4>
+            <div class="col-12">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="address" placeholder="Address" id="address" required="" data-error="Please enter your Address" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-6">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+          
+
+<!--
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="provider" placeholder="Provider" id="provider" required data-error="Please enter your Address">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div> -->
+            
+            <!--
+            <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                    <a href="#pickpackage" class="btn btn-primary">Choose a product</a>
+                </div>
+              </div>	-->
+            
+            <!--
+            <div class="col-lg-6 col-md-6">
+                <div class="section-title-form">
+                
+                <a href="#pickpackage" class="btn btn-primary">Choose a product</a>
+
+                </div>
+              </div>		-->					
+            
+            
+            <div class="col-lg-12 col-md-12">
+                <div class="section-title-form" data-children-count="1">
+                
+                    <select class="form-control" id="sel_product" name="sel_product" width="100%" style="width: 100%; display: none;">
+                        <option>Please select a product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        
+                    <option value="">--Please select a package--</option><option value="vuma-ae-promo-fh-1000-100">Fibre Fast Uncapped 1000/100 Mbps @ R1645</option><option value="vuma-ae-res-1000-100">Fibre Fast Uncapped 1000/100 Mbps @ R1645</option><option value="vuma-ae-promo-fh-200-200">Fibre Fast Uncapped 200/200 Mbps @ R1545</option><option value="vuma-ae-res-red-200-200">Fast Fibre Reduced Subscription 200/200 Mbps @ R2905 upfront &amp; R1445pm</option><option value="vuma-ae-promo-fh-200-20">Fibre Fast Uncapped 200/20 Mbps @ R1495</option><option value="vuma-ae-res-red-200-20">Fast Fibre Reduced Subscription 200/20 Mbps @ R2695 upfront &amp; R1345pm</option><option value="vuma-ae-promo-fh-100-100">Fibre Fast Uncapped 100/100 Mbps @ R1275</option><option value="vuma-ae-res-red-100-100">Fast Fibre Reduced Subscription 100/100 Mbps @ R2445 upfront &amp; R1225pm</option><option value="vuma-ae-promo-fh-100-10">Fibre Fast Uncapped 100/10 Mbps @ R1195</option><option value="vuma-ae-res-red-100-10">Fast Fibre Reduced Subscription 100/10 Mbps @ R2275 upfront &amp; R1135pm</option><option value="vuma-ae-promo-fh-50-50">Fibre Fast Uncapped 50/50 Mbps @ R1095</option><option value="vuma-ae-res-red-50-50">Fast Fibre Reduced Subscription 50/50 Mbps @ R2045 upfront &amp; R1025pm</option><option value="vuma-ae-promo-fh-50-5">Fibre Fast Uncapped 50/5 Mbps @ R1035</option><option value="vuma-ae-res-red-50-5">Fast Fibre Reduced Subscription 50/5 Mbps @ R1945 upfront &amp; R975pm</option><option value="vuma-ae-promo-fh-20-20">Fibre Fast Uncapped 20/20 Mbps @ R955</option><option value="vuma-ae-res-red-20-20">Fast Fibre Reduced Subscription 20/20 Mbps @ R1755 upfront &amp; R875pm</option><option value="vuma-ae-promo-fh-10-10">Fibre Fast Uncapped 10/10 Mbps @ R785</option><option value="vuma-ae-res-red-10-10">Fast Fibre Reduced Subscription 10/10 Mbps @ R1445 upfront &amp; R725pm</option></select><div class="nice-select form-control" tabindex="0"><span class="current">Please select a product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><ul class="list"><li data-value="Please select a product" class="option selected">Please select a product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><li data-value="" class="option">--Please select a package--</li><li data-value="vuma-ae-promo-fh-1000-100" class="option">Fibre Fast Uncapped 1000/100 Mbps @ R1645</li><li data-value="vuma-ae-res-1000-100" class="option">Fibre Fast Uncapped 1000/100 Mbps @ R1645</li><li data-value="vuma-ae-promo-fh-200-200" class="option">Fibre Fast Uncapped 200/200 Mbps @ R1545</li><li data-value="vuma-ae-res-red-200-200" class="option">Fast Fibre Reduced Subscription 200/200 Mbps @ R2905 upfront &amp; R1445pm</li><li data-value="vuma-ae-promo-fh-200-20" class="option">Fibre Fast Uncapped 200/20 Mbps @ R1495</li><li data-value="vuma-ae-res-red-200-20" class="option">Fast Fibre Reduced Subscription 200/20 Mbps @ R2695 upfront &amp; R1345pm</li><li data-value="vuma-ae-promo-fh-100-100" class="option">Fibre Fast Uncapped 100/100 Mbps @ R1275</li><li data-value="vuma-ae-res-red-100-100" class="option">Fast Fibre Reduced Subscription 100/100 Mbps @ R2445 upfront &amp; R1225pm</li><li data-value="vuma-ae-promo-fh-100-10" class="option">Fibre Fast Uncapped 100/10 Mbps @ R1195</li><li data-value="vuma-ae-res-red-100-10" class="option">Fast Fibre Reduced Subscription 100/10 Mbps @ R2275 upfront &amp; R1135pm</li><li data-value="vuma-ae-promo-fh-50-50" class="option">Fibre Fast Uncapped 50/50 Mbps @ R1095</li><li data-value="vuma-ae-res-red-50-50" class="option">Fast Fibre Reduced Subscription 50/50 Mbps @ R2045 upfront &amp; R1025pm</li><li data-value="vuma-ae-promo-fh-50-5" class="option">Fibre Fast Uncapped 50/5 Mbps @ R1035</li><li data-value="vuma-ae-res-red-50-5" class="option">Fast Fibre Reduced Subscription 50/5 Mbps @ R1945 upfront &amp; R975pm</li><li data-value="vuma-ae-promo-fh-20-20" class="option">Fibre Fast Uncapped 20/20 Mbps @ R955</li><li data-value="vuma-ae-res-red-20-20" class="option">Fast Fibre Reduced Subscription 20/20 Mbps @ R1755 upfront &amp; R875pm</li><li data-value="vuma-ae-promo-fh-10-10" class="option">Fibre Fast Uncapped 10/10 Mbps @ R785</li><li data-value="vuma-ae-res-red-10-10" class="option">Fast Fibre Reduced Subscription 10/10 Mbps @ R1445 upfront &amp; R725pm</li></ul></div>
+                    <!--<small id="Help" class="form-text text-muted">If no products are displaying then you have not completed Step 1</small>-->
+                </div>
+              </div>						
+            
+            <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                
+
+                    <small id="Help" class="form-text text-muted">If no products are displaying then you have not completed Step 1</small>
+                </div>
+              </div>				
+            
+
+            
+            
+            <div class="col-4">
+            <br>
+                <div class="form-group" data-children-count="1">
+                    <input readonly="" type="text" class="form-control" name="provider" placeholder="Provider: Vumatel" id="provider" value="Provider: Vumatel" required="" data-error="Please enter your Address">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            
+
+            <!--<div class="col-4">-->
+            <div class="col-12" align="left">
+
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="delivery_instructions" placeholder="Delivery Instructions" id="delivery_instructions">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            
+            <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                    <h4>Delivery Details</h4>
+                </div>
+              </div>					
+
+            <div class="col-12">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="del_address" placeholder="Delivery Address" id="del_address" required="" data-error="Please enter your delivery Address" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-8">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>				
+
+            <div class="col-12">
+                <div class="form-group" data-children-count="1">
+                    <input type="text" class="form-control" name="del_contact_no" placeholder="Delivery Contact Number" id="del_contact_no" required="" data-error="Delivery contact number" data-kwimpalastatus="alive" data-kwimpalaid="1621843614117-9">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>							
+            
+        
+            
+            <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                    <h4>RICA Requirement</h4>
+                </div>
+              </div>
+
+              <!-- Name -->
+            <!-- <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Account Holder" name="account_holder" id="name" required data-error="Please enter your name">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div> -->
+            <!-- Number -->
+            <!--
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Account Number" name="account_number" id="account_number" required data-error="Please enter your phone number">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <br>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="account_type" id="inlineRadio1" value="Transmission">
+                      <label class="form-check-label" for="inlineRadio1">Transmisssion</label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="account_type" id="inlineRadio2" value="Savings">
+                      <label class="form-check-label" for="inlineRadio2">Savings</label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="account_type" id="inlineRadio2" value="Cheque">
+                      <label class="form-check-label" for="inlineRadio2">Cheque</label>
+                </div>
+                
+            </div>-->
+
+            <!-- Surname -->
+            <!--
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Bank" name="bank" id="bank" required data-error="Please enter your bank name">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>-->
+            
+            <!--
+            <div class="col-4">
+                <div class="form-group">
+                    <select class="form-control" id="bank" name="bank" width="100%" style="width: 100%">
+                        <option>Please select a bank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="ABN AMRO BANK">ABN AMRO BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="ABSA">ABSA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="AFRICAN BANK">AFRICAN BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="ALBARAKA BANK">ALBARAKA BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="BANK WINDHOEK">BANK WINDHOEK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="BANK ZERO">BANK ZERO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="BIDVEST BANK">BIDVEST BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="BNP PARIBAS">BNP PARIBAS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="CAPITEC BANK">CAPITEC BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="CITIBANK N.A">CITIBANK N.A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="DISCOVERY">DISCOVERY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="FINBOND MUTUAL BANK">FINBOND MUTUAL BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="FIRST NATIONAL BANK">FIRST NATIONAL BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="GRINDROD BANK">GRINDROD BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="HABIB OVERSEAS BANK">HABIB OVERSEAS BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="HBZ BANK">HBZ BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="HSBC">HSBC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="INVESTEC BANK">INVESTEC BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="ITHALA">ITHALA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="J.P.MORGAN CHASE BANK">J.P.MORGAN CHASE BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="MERCANTILE BANK">MERCANTILE BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="MTN BANKING">MTN BANKING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="NEDBANK">NEDBANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="NEDBANK LESOTHO">NEDBANK LESOTHO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="NEDBANK NAMIBIA">NEDBANK NAMIBIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="NEDBANK SWAZILAND">NEDBANK SWAZILAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="OLYMPUS MOBILE BANK">OLYMPUS MOBILE BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="PERMANENT BANK">PERMANENT BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="POSTBANK">POSTBANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="S.A. RESERVE BANK">S.A. RESERVE BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="SASFIN BANK">SASFIN BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="STANDARD BANK">STANDARD BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="STANDARD BANK LESOTHO">STANDARD BANK LESOTHO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="STANDARD BANK SWAZILAND">STANDARD BANK SWAZILAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="STANDARD CHARTERED BANK">STANDARD CHARTERED BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="STATE BANK OF INDIA">STATE BANK OF INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="TYMEBANK">TYMEBANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="UNIBANK">UNIBANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="VBS MUTUAL">VBS MUTUAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="NEDBANK LIMITED INCORPORATED BOE BANK">NEDBANK LIMITED INCORPORATED BOE BANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="NEDBANK INCORPORATING FBC">NEDBANK INCORPORATING FBC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="U BANK LIMITED">U BANK LIMITED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="GROBANK">GROBANK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>									
+                    </select>
+                </div>
+            </div>	-->					
+            
+            
+            <!-- Surname -->
+            <!--
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Branch" name="branch" id="branch">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>-->
+            <!-- Surname -->
+            <!--
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Branch Code" name="branch_code" id="branch_code">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div> -->
+            <!--
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Account Name" name="acc_name" id="acc_name">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>						-->
+            <div class="col-9" align="left">
+                <br>
+                <p>Please upload a certified copy of your ID or Passport.</p>
+            </div>
+
+            <!--<div class="col-3">-->
+            <div class="col-9" align="left">
+
+                <br>
+                <div class="form-group form-inline">
+                    <input type="file" class="form-control-file" id="idnum" name="idnum">
+                  </div>
+             </div>
+
+             <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                    <h4>Confirmation of Order</h4>
+                </div>
+              </div>
+            
+            
+             <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                <p style="font-size:20px !important;" data-children-count="1"><input type="checkbox" id="tnc" name="tnc" value="tnc" required="" data-error="Please agree to the terms and conditions">
+                <label for="tnc"><a href="https://www.sadv.co.za/legal/home-fibre-terms-and-conditions/" target="_blank">&nbsp;&nbsp;&nbsp;I agree to SADV's Home Fibre Terms and Conditions</a></label>
+                    <!--<a href="https://www.sadv.co.za/legal/home-fibre-terms-and-conditions/" target="_blank">I agree to SADV's Home Fibre Terms and Conditions</a>--></p>
+                </div>
+                                            <!--<div class="section-title-form">
+                <p><input type="checkbox" id="tnc" name="tnc" value="tnc">
+                    <a href="https://www.sadv.co.za/legal/home-fibre-terms-and-conditions/" target="_blank">I agree to SADV's Home Fibre Terms and Conditions</a></p>
+                </div>-->
+              </div>						
+            
+             <div class="col-lg-12 col-md-12">
+                <div class="section-title-form">
+                    <p style="color: red"><strong>Please note: After clicking 'Submit &amp; Sign' you will be directed to our electronic payment partner portal. Please check your email for the OTP required to complete the sign on process.</strong>
+              </p></div>						
+
+            <div class="col-lg-12 col-md-12">
+                <button type="submit" class="btn btn-primary" name="btn_submit">Submit &amp; Sign</button>
+                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    
+</div></form>
